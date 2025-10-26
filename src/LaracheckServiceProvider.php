@@ -25,7 +25,7 @@ class LaracheckServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/laracheck.php', 'laracheck');
 
-        $this->app->singleton('laracheck', function () {
+        $this->app->singleton('laracheck', function ($app) {
             return new LaracheckTracker;
         });
     }
